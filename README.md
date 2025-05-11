@@ -81,3 +81,157 @@ These describe **how the system should perform** or behave under certain conditi
 - The booking system should have 99.9% uptime over a year.
 
 ---
+## 🎯 Use Case Diagrams
+
+While working on this project, I learned that **Use Case Diagrams** are a great way to visually show how users (actors) interact with the system. They focus on the system’s **functionality** from an external point of view.
+
+---
+
+### 📌 What Are Use Case Diagrams?
+
+Use Case Diagrams are a part of UML (Unified Modeling Language). They help:
+- Identify the main **actors** (users or external systems).
+- Define the different **use cases** (what users can do).
+- Clarify how users interact with the system.
+
+This helps both technical and non-technical stakeholders quickly understand the system’s scope and key features.
+
+---
+
+### 👥 Actors in Our Booking System
+- **User** – can register, log in, book, pay, cancel, and view history.
+- **Admin** – manages slots and all bookings.
+- **Payment System** – external system that handles transactions.
+
+---
+
+### 🧩 Use Case Diagram
+
+Here’s the use case diagram I created for this Booking Management System:
+
+![Use Case Diagram for Booking System](alx-booking-uc.png)
+
+> Filename: `alx-booking-uc.png`
+
+---
+
+## ✅ Acceptance Criteria
+
+Below are the acceptance criteria I wrote for each key feature in the Booking Management System. These help define when each feature is considered complete and working as expected.
+
+---
+
+### 🧾 1. User Registration
+
+**Feature:** Allow users to create an account.
+
+**Acceptance Criteria:**
+- [ ] The registration form must include fields for full name, email, password, and phone number.
+- [ ] The system must validate all fields before submission (e.g., email format, password length).
+- [ ] The system must check for duplicate emails before creating the account.
+- [ ] Upon successful registration, the user should receive a welcome email.
+- [ ] The user should be redirected to the login page after successful registration.
+
+---
+
+### 🔐 2. User Login & Authentication
+
+**Feature:** Allow users to log in securely.
+
+**Acceptance Criteria:**
+- [ ] Users must enter a valid email and password to log in.
+- [ ] The system must return an error message if credentials are incorrect.
+- [ ] After logging in, users are redirected to their dashboard.
+- [ ] Users stay logged in during their session unless they log out manually.
+
+---
+
+### 📅 3. View Available Booking Slots
+
+**Feature:** Display available time slots for booking.
+
+**Acceptance Criteria:**
+- [ ] The system must show a list or calendar of available dates and times.
+- [ ] The list must be updated in real-time to prevent double bookings.
+- [ ] The user must be able to filter available slots by service type or provider (if applicable).
+
+---
+
+### 📝 4. Create a Booking
+
+**Feature:** Allow users to make a booking.
+
+**Acceptance Criteria:**
+- [ ] Only logged-in users can make a booking.
+- [ ] The user must select a service, date, and time from available options.
+- [ ] The system must prevent double booking of the same slot.
+- [ ] A booking summary must be shown before confirmation.
+- [ ] The booking is stored in the database upon confirmation.
+
+---
+
+### ✏️ 5. Edit or Cancel a Booking
+
+**Feature:** Let users change or cancel their existing bookings.
+
+**Acceptance Criteria:**
+- [ ] Users must be logged in to view their bookings.
+- [ ] Users can reschedule or cancel a booking if it hasn’t passed yet.
+- [ ] The system must update the availability list accordingly.
+- [ ] The user must receive an email confirming the update or cancellation.
+
+---
+
+### 💳 6. Checkout and Payment
+
+**Feature:** Handle payment at the time of booking.
+
+**Acceptance Criteria:**
+- [ ] The checkout page must show a detailed summary of the booking.
+- [ ] The user must enter valid payment information.
+- [ ] The system must validate and process the payment securely.
+- [ ] On success:
+  - Save the booking to the database.
+  - Send a payment receipt and booking confirmation via email.
+  - Redirect the user to a confirmation page.
+- [ ] On failure:
+  - Show an error message.
+  - Allow the user to retry with different payment info.
+
+---
+
+### 📬 7. Email Notifications
+
+**Feature:** Send confirmation and status update emails.
+
+**Acceptance Criteria:**
+- [ ] Send an email upon successful registration.
+- [ ] Send a booking confirmation email after checkout.
+- [ ] Send a notification email when a booking is edited or canceled.
+- [ ] Emails must include all relevant booking details.
+
+---
+
+### 🧑‍💼 8. Admin: Manage Booking Slots
+
+**Feature:** Admins can create, edit, and delete available booking slots.
+
+**Acceptance Criteria:**
+- [ ] Admins must log in with valid credentials.
+- [ ] Admins can add new slots (date, time, and service).
+- [ ] Admins can remove or edit existing slots.
+- [ ] Changes to slot availability must reflect in the user interface instantly.
+
+---
+
+### 📊 9. Admin: View All Bookings
+
+**Feature:** Admins can view and manage all user bookings.
+
+**Acceptance Criteria:**
+- [ ] Admins can see a list of all bookings with filters (e.g., date, service, user).
+- [ ] Admins can cancel or modify any booking if necessary.
+- [ ] Admin actions must trigger user notifications via email.
+
+---
+
